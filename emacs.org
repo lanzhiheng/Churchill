@@ -1,0 +1,64 @@
+** Dired mode
+   In this mode, changing the filenames in the right-hand column and then typing C-x C-s ("save") renames the indicated files. Renaming files is as easy as editing text. Batch renaming (e.g., renaming every file of the form icon_* to backup_icon_*) is as easy as performing a search and replace (M-x query-replace or M-%); there's no need to learn to use a separate batch renaming tool.
+
+** Move with C-u
+ C-u followed by a number and a movement command repeats that command the specified number of times. You can also use M-[digit] instead of C-u [digit]
+
+** Narrowing
+   Narrowing restricts the view (and editing) of a buffer to a certain region. This is handy when you're only working with a small part of a buffer (e.g. a chapter in a book). Then commands like incremental search, or beginning-of-buffer or end-of-buffer don't lead you out of the region of interest, and commands like search and replacement don't affect the entire file.
+
+   For more information see (info "(emacs)Narrowing").
+
+** Yanking
+   After a piece of text has been killed, it goes to a place called the kill ring which is analagous to the "clipboard": you can yank an item to restore it from the kill ring with C-y.
+
+   If the item you want to yank is not placed when you type C-y, type M-y (repeatedly, if necessary) to cycle through previously killed items. You can use M-Y to browser the kill ring.
+
+** Undo
+If this sounds complicated, just remember that "undo" is always capable of getting you back to any previous state your buffer was in (unless Emacs has run out of memory to store the undo history). *The principle here is that Emacs makes it very difficult to accidentally lose your work.*
+
+
+** Incremental search
+
++ C-s	Incremental search
++ C-r	Backward incremental search
++ C-M-s	Regular expression incremental search
+
+** Search and replacement
+- Type y to replace the current match.
+- Type n to skip to the next match without replacing.
+- Type q to exit without doing any more replacements.
+- Type . to replace this match, then exit.
+- Type ! to replace all remaining matches with no more questions.
+
+
+** Regular expression search
+
+*** Easy way to test your regexps
+If you're new to regexps, or you are constructing a particularly complicated regexp, you can use the regexp builder (M-x re-builder).
+
+
+*** List lines matching regexp
+Instead of jumping through matches one by one, you can also choose to display them all at once. M-x occur prompts you for a regular expression, then displays in a separate buffer a list of all lines in the current buffer which match that regexp (as well as their line numbers). Clicking on any occurrence takes you to that line in the buffer.
+
+*** Invoking shell commands
+*M-x shell-command or M-!* Executes a command and displays the output in a new buffer.
+
+*M-x shell-command-on-region or M-|* Executes a command, piping in the current region as input; displays the output in a new buffer.
+
+
+*** Version control
+
+*C-x v =* Displays a diff showing the changes you've made to the current file.
+
+*C-x v ~* Prompts you for a version number and shows you that version of the current file in another window.
+
+*C-x v g* Displays an annotated version of the file showing, for each line, the commit where that line was last changed and by whom. On any line you can press L to view the log message for that commit or D to view the associated diff.
+
+*C-x v l* Displays a log of previous changes to the file. When the cursor is on a particular log entry, you can press d to view the diff associated with that change or f to view that version of the file.
+
+
+
+
+** Numeric Arguments
+   You can use a numeric argument before a self-inserting character to insert multiple copies of it. This is straightforward when the character is not a digit; for example, C-u 6 4 a inserts 64 copies of the character ‘a’. But this does not work for inserting digits; C-u 6 4 1 specifies an argument of 641. You can separate the argument from the digit to insert with another C-u; for example, C-u 6 4 C-u 1 does insert 64 copies of the character ‘1’.
