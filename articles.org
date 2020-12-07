@@ -1,0 +1,16 @@
+* Org Mode
+
+- [[https://karl-voit.at/2017/09/23/orgmode-as-markup-only/][Org-Mode Is One of the Most Reasonable Markup Languages to Use for Text]]
+- [[https://orgmode.org/tools.html][Tools for org]]
+- [[https://orgmode.org/worg/][Worg]]
+- [[https://orgmode.org/quickstart.html][org mode quick start]]
+- [[http://howardism.org/Technical/Emacs/literate-devops.html][Literate DevOps]]
+- [[https://orgmode.org/orgcard.pdf][orgcard]]
+
+* English
+
+[[https://www.cnblogs.com/zhoujg/archive/2011/03/01/1968366.html][英语：漏屋-英语学习的真实方法及误区分析（转）]]
+
+* Tools
+
+[[https://pandoc.org/][Pandoc]]
