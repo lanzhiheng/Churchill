@@ -14,3 +14,7 @@
 * Tools
 
 [[https://pandoc.org/][Pandoc]]
+
+* Tests
+
+- [[https://xfyuan.github.io/2020/07/testprof-factory-therapy-for-ruby-tests/][Ruby测试的“工厂疗法”]]
